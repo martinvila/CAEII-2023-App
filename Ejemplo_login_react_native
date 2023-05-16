@@ -21,7 +21,8 @@ const LoginScreen = () => {
         // Inicio de sesión exitoso
         // Navegar a la siguiente pantalla o realizar acciones adicionales
         console.log('Inicio de sesión exitoso');
-        Linking.openURL('https://google.com.ar');
+        Linking.openURL('https://google.com.ar'); //aca quise que redirija hacia una URL ya que la linea anterior no hace nada, pero 
+        //tampoco redirige a ningun lado, no responde la api por lo visto
       } else {
         // Inicio de sesión fallido
         // Mostrar un mensaje de error o realizar acciones adicionales
