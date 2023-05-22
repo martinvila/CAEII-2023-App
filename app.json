@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "CAEII-2023-App",
+    "slug": "CAEII-2023-App",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "CAEII-2023-App"
+}
