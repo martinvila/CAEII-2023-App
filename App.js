@@ -1,21 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, View } from 'react-native';
+import Login from './src/components/login.jsx'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ImageBackground
+        style={styles.image}
+        source={require('./recursos/images/fondo3.jpg')}
+        resizeMode={'cover'}
+        blurRadius={0.8}>
+        <Login />
+      </ImageBackground>
+      <StatusBar style="light" />
     </View>
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1
   },
+  image: {
+    flex: 1,
+    justifyContent: 'center'
+  }
 });
