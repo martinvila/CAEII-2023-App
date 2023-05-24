@@ -54,7 +54,3 @@ yarn-error.log
 web-build/
 dist/
 
-# andoroid y ios
-andoroid/
-ios/
-

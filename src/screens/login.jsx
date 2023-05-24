@@ -1,18 +1,7 @@
 import React, { useState } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Alert, Linking, Image } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, Alert, Image } from 'react-native'
 import { Input } from 'react-native-elements'
-
-
-const URLButton = ({url, children}) => {
-    const handlePress = async () => {
-        await Linking.openURL(url)
-    }
-    return (
-        <TouchableOpacity onPress={handlePress}>
-            <Text style={styles.links}>{children}</Text>
-        </TouchableOpacity>
-    )
-}
+import URLButton from '../components/URLButton'
 
 
 const Login = () => {
@@ -21,9 +10,7 @@ const Login = () => {
     const [hidePassword, setHidePassword] = useState(true)    
 
     const handleLogin = () => {
-
         Alert.alert('Proximamente')
-
         // fetch('https://inscripciones.aareii.org.ar/api/v1/login', {
         //     method: 'POST',
         //     headers: {
@@ -47,7 +34,6 @@ const Login = () => {
         //     console.error(error);
         // })
     }
-    
     return (
         <View style={styles.container}>
             <Image style={styles.logo} source={require('../../recursos/images/logoCAEII2.png')}/>
@@ -79,9 +65,11 @@ const Login = () => {
     )
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#101010", 
     alignItems: 'center',
     justifyContent: 'center',
     padding: 30
@@ -106,10 +94,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
-  links: {
-    fontWeight: 'bold',
-    color: '#F5F5F5'
-  },
   btnVisibility: {
     height: 40,
     width: 35,
@@ -126,8 +110,10 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     height: '25%',
     width: '100%',
-    marginBottom: 40
+    marginBottom: 40,
+    marginTop: 30
   }
 })
+
 
 export default Login

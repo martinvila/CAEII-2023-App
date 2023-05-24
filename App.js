@@ -1,30 +1,44 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { ImageBackground, StyleSheet, View } from 'react-native';
-import Login from './src/components/login.jsx'
+import React, { useEffect, useState } from 'react';
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import Login from './src/screens/login.jsx'
+import Splash from './src/screens/splash.jsx'
+
 
 export default function App() {
+
+  const [appIsReady, setAppIsReady] = useState(false)
+  
+  useEffect(() => {
+    async function inicia(){
+      try {
+        await new Promise((resolve) => {
+          setTimeout(resolve, 5000)
+        })
+      }
+      catch (error) {
+        console.log(error)
+      }
+      finally {
+        setAppIsReady(true)
+      }
+    }
+  
+    inicia()
+  })
+
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        style={styles.image}
-        source={require('./recursos/images/fondo3.jpg')}
-        resizeMode={'cover'}
-        blurRadius={0.8}>
-        <Login />
-      </ImageBackground>
+    <NavigationContainer style={styles.container}>
+      {appIsReady ? <Login /> : <Splash />}
       <StatusBar style="light" />
-    </View>
+    </NavigationContainer>
   );
 }
 
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
-  },
-  image: {
-    flex: 1,
-    justifyContent: 'center'
+    flex: 1   
   }
 });
