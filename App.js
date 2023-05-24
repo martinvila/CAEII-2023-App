@@ -2,9 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import Login from './src/screens/login.jsx'
-import Splash from './src/screens/splash.jsx'
-
+import Login from './src/screens/Login.jsx'
+import Splash from './src/screens/Splash.jsx'
+import { DrawerNavigation } from './src/screens/DrawerNavigation.jsx';
 
 export default function App() {
 
@@ -30,8 +30,9 @@ export default function App() {
 
   return (
     <NavigationContainer style={styles.container}>
-      {appIsReady ? <Login /> : <Splash />}
+      {/* {appIsReady ? <Login /> : <Splash />} */}
       <StatusBar style="light" />
+      <DrawerNavigation /> 
     </NavigationContainer>
   );
 }
