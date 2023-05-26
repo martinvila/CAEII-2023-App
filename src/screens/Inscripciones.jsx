@@ -8,7 +8,7 @@ const w = Dimensions.get("window").width;
 const h = Dimensions.get("window").height;
 
 
-const InscripcionScreen = () => {
+const Inscripciones = () => {
   
   return (
       <Swiper>
@@ -60,11 +60,10 @@ const InscripcionScreen = () => {
   
 };
 
-export default InscripcionScreen;
 
 const styles = StyleSheet.create({
-    slide: {
-      flex: 1,
+  slide: {
+    flex: 1,
       paddingTop: 60,
       marginHorizontal: 30,
     },
@@ -90,3 +89,6 @@ const styles = StyleSheet.create({
       marginLeft: 10,
     },
   });
+
+
+ export default Inscripciones;

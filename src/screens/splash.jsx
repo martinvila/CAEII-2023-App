@@ -1,5 +1,7 @@
 import React from 'react'
-import { View, ImageBackground, StyleSheet } from 'react-native'
+import { View, ImageBackground, StyleSheet, Text } from 'react-native'
+import { fonts } from 'react-native-elements/dist/config'
+import { color } from 'react-native-reanimated'
 
 
 const Splash = () => {
@@ -7,9 +9,10 @@ const Splash = () => {
         <View style={styles.container}>
             <ImageBackground
                 style={styles.image}
-                source={require('../../recursos/images/lema.jpg')}
-                resizeMode={'contain'}
-                blurRadius={0}>
+                source={require('../../recursos/images/splash.png')}
+                resizeMode={'cover'}>
+                <Text style={styles.lema}>NAVEGÁ EL PRESENTE,</Text>
+                <Text style={styles.lema}>            CREÁ EL FUTURO.</Text>
             </ImageBackground>
         </View>
     )
@@ -23,7 +26,15 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
+        alignItems: 'center',
         justifyContent: 'center'
+    },
+    lema: {
+        fontWeight: 'bold',
+        fontSize: 27,
+        paddingLeft: 50,
+        paddingBottom: 10,
+        color: '#101010'
     }
 })
 

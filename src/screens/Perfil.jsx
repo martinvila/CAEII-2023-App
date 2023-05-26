@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
-const ProfileScreen = () => {
+const Perfil = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProfileScreen;
+export default Perfil;

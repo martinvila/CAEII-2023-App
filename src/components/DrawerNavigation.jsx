@@ -1,24 +1,18 @@
 import React from 'react';
+import { View , Text, StyleSheet, TouchableOpacity } from 'react-native'; 
 import { DrawerContentScrollView, createDrawerNavigator  } from "@react-navigation/drawer";
+import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import MenuButtom from './MenuButtom';
+import Perfil from "../screens/Perfil" ;
+import Acreditation from '../screens/Acreditation';
+import Home from '../screens/Home';
+import Nosotros from '../screens/Nosotros'; 
 
-import Profile from "./Profile" ;
-import Acreditation from './Acreditation';
-import Home from './Home';
-
-import Nosotros from './Nosotros'; 
-import Contacto from './Contacto';
-
-
-
-import { Ionicons } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native';
-import { View , Text, StyleSheet} from 'react-native'; 
-import MenuButtom from '../components/MenuButtom';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Drawer = createDrawerNavigator(); 
 
-export function DrawerNavigation( ) { 
+
+export function DrawerNavigation() {
     return (
         <Drawer.Navigator
             drawerContent={ (props)=> <MenuItems {...props}/> }
@@ -26,27 +20,24 @@ export function DrawerNavigation( ) {
                 headerStyle: {
                   backgroundColor: "#101010", // Cambiar el color del encabezado aquí
                 },
+                headerTitleAlign: 'center',
                 headerTintColor: 'white', // Cambiar el color del texto del encabezado aquí
-                
+
                 headerRight: () => (
-                    <TouchableOpacity
+                    <TouchableOpacity 
                         style={styles.notificationButton}
-                        //onPress={() => navigation.navigate('Notificaciones')}
+                        //onPress={(props) => navigation.navigate('Notificaciones')}
                     >
                         <Ionicons name="notifications-outline" size={24} color="white" />
                     </TouchableOpacity>
-        ),      
-              }}
+                )      
+            }}
         >
-
-            <Drawer.Screen name="Perfil" component={ Profile } />
             <Drawer.Screen name="Inicio" component={ Home } />
-            <Drawer.Screen name="Acreditacion" component={ Acreditation } />
+            <Drawer.Screen name="Perfil" component={ Perfil } />
             <Drawer.Screen name="Nosotros" component={ Nosotros } />
-            <Drawer.Screen name="Contacto" component={ Contacto } />
-           
-            
-            
+            <Drawer.Screen name="Acreditacion" component={ Acreditation } />
+
         </Drawer.Navigator>
     );
 }
@@ -54,17 +45,14 @@ export function DrawerNavigation( ) {
 
 const MenuItems = ( {navigation} ) => { 
     return (
-        <DrawerContentScrollView
-            style = { styles.container}
-        > 
+        <DrawerContentScrollView style = { styles.container}> 
         
-        <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
-            <View style={styles.avatarContainer}>
-                <MaterialCommunityIcons name="account-circle" size={50} color="white" />
-                <Text style={styles.avatarText}>Usuario</Text>
-            </View>
-        </TouchableOpacity>
-            
+            <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
+                <View style={styles.avatarContainer}>
+                    <MaterialCommunityIcons name="account-circle" size={50} color="white" />
+                    <Text style={styles.avatarText}>Usuario</Text>
+                </View>
+            </TouchableOpacity>   
                        
             <MenuButtom
              iconLibrary="MaterialCommunityIcons"
@@ -73,9 +61,8 @@ const MenuItems = ( {navigation} ) => {
              onPress= { () => navigation.navigate('Inicio')} 
             /> 
             
-
             <MenuButtom
-             iconLibrary="Ionicons"
+             iconLibrary="MaterialCommunityIcons"
              iconName="group"
              text = "Nosotros"
              onPress= { () => navigation.navigate('Nosotros')}  
@@ -85,7 +72,7 @@ const MenuItems = ( {navigation} ) => {
              iconLibrary="AntDesign"
              iconName="form"
              text = "Contacto"
-             onPress= { () => navigation.navigate('Contacto')}   
+             url = 'https://www.instagram.com/caeii_oficial/'   
             /> 
 
             <MenuButtom
@@ -94,8 +81,6 @@ const MenuItems = ( {navigation} ) => {
              text = "Acreditación"
              onPress= { () => navigation.navigate('Acreditacion')} 
             /> 
-
-            
 
         </DrawerContentScrollView>
     )
@@ -127,10 +112,10 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         color: 'white',
-      },
+    },
 
-      notificationButton: {
+    notificationButton: {
         marginRight: 10,
-      },
+    }
 })
 

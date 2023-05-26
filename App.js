@@ -2,9 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import Login from './src/screens/Login.jsx'
+import { DrawerNavigation } from './src/components/DrawerNavigation.jsx';
+import Login  from './src/screens/Login.jsx'
 import Splash from './src/screens/Splash.jsx'
-import { DrawerNavigation } from './src/screens/DrawerNavigation.jsx';
 
 export default function App() {
 
@@ -14,7 +14,7 @@ export default function App() {
     async function inicia(){
       try {
         await new Promise((resolve) => {
-          setTimeout(resolve, 5000)
+          setTimeout(resolve, 3000)
         })
       }
       catch (error) {
@@ -30,9 +30,9 @@ export default function App() {
 
   return (
     <NavigationContainer style={styles.container}>
-      {/* {appIsReady ? <Login /> : <Splash />} */}
+      {/* (appIsReady) ? <Login /> : <Splash /> */}
+      <DrawerNavigation />
       <StatusBar style="light" />
-      <DrawerNavigation /> 
     </NavigationContainer>
   );
 }
