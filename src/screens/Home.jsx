@@ -1,15 +1,37 @@
 import React from 'react';
-import { View, ScrollView, Text, Image, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 
-const InitScreen = () => {
+const Home = ({ navigation }) => {
+  const handleButtonPress = (screenName) => {
+    navigation.navigate(screenName);
+  };
+
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        {/* Contenido del encabezado */}
-      </View>
-      <ScrollView contentContainerStyle={styles.contentContainer}>
-        {/* Contenido de la pantalla */}
-      </ScrollView>
+      <TouchableOpacity
+        style={styles.button1}
+        onPress={() => handleButtonPress('Inscripciones')}
+      >
+        <Text style={styles.buttonText}>Inscripción</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button2}
+        onPress={() => handleButtonPress('Cronograma')}
+      >
+        <Text style={styles.buttonText}>Cronograma</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button3}
+        onPress={() => handleButtonPress('Pilares')}
+      >
+        <Text style={styles.buttonText}>Pilares</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button4}
+        onPress={() => handleButtonPress('Asistente')}
+      >
+        <Text style={styles.buttonText}>Manual Asistente</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -17,11 +39,56 @@ const InitScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#101010", // Cambia el color de fondo aquí
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: "#101010"
   },
-  contentContainer: {
-    // Estilos para el contenido de la pantalla
+  button1: {
+    width: 150,
+    height: 150,
+    backgroundColor: "#13839C",
+    borderRadius: 10,
+    marginBottom: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+  buttonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
+  button2: {
+    width: 150,
+    height: 150,
+    backgroundColor: "#485E88",
+    borderRadius: 10,
+    marginBottom: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  button3: {
+    width: 150,
+    height: 150,
+    backgroundColor: "#B03723",
+    borderRadius: 10,
+    marginBottom: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  button4: {
+    width: 150,
+    height: 150,
+    backgroundColor: "#C95727",
+    borderRadius: 10,
+    marginBottom: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+
 });
 
-export default InitScreen;
+export default Home;

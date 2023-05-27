@@ -7,7 +7,11 @@ import Perfil from "../screens/Perfil" ;
 import Acreditation from '../screens/Acreditation';
 import Home from '../screens/Home';
 import Nosotros from '../screens/Nosotros'; 
-
+import Notificaciones from '../screens/Notificaciones';  
+import Cronograma from '../screens/Cronograma'; 
+import Inscripciones from '../screens/Inscripciones'; 
+import Pilares from '../screens/Pilares'; 
+import Asistente from '../screens/Asistente';
 
 const Drawer = createDrawerNavigator(); 
 
@@ -37,6 +41,11 @@ export function DrawerNavigation() {
             <Drawer.Screen name="Perfil" component={ Perfil } />
             <Drawer.Screen name="Nosotros" component={ Nosotros } />
             <Drawer.Screen name="Acreditacion" component={ Acreditation } />
+            <Drawer.Screen name="Notificaciones" component={ Notificaciones } />
+            <Drawer.Screen name="Cronograma" component={ Cronograma } />
+            <Drawer.Screen name="Inscripciones" component={ Inscripciones } />
+            <Drawer.Screen name="Pilares" component={ Pilares } /> 
+            <Drawer.Screen name="Asistente" component={ Asistente } />
 
         </Drawer.Navigator>
     );

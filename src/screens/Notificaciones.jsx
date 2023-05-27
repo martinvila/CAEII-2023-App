@@ -15,7 +15,7 @@ const Slide = () => {
 
   return (
     <View style={styles.slide}>
-      <Image source={require("../../recursos/images/Verano_1")} style={styles.img} />
+      <Image source={require("../../recursos/images/Verano_1.jpg")} style={styles.img} />
       <Text style={styles.title}>Conferencia 2</Text>
       <TouchableOpacity onPress={toggleExpanded}>
         <Text style={styles.text}>
