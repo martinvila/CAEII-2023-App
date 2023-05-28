@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View , Text, StyleSheet, TouchableOpacity } from 'react-native'; 
 import { DrawerContentScrollView, createDrawerNavigator  } from "@react-navigation/drawer";
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Ionicons, FontAwesome } from '@expo/vector-icons';
 import MenuButtom from './MenuButtom';
 import Perfil from "../screens/Perfil" ;
 import Acreditation from '../screens/Acreditation';
@@ -12,6 +12,7 @@ import Cronograma from '../screens/Cronograma';
 import Inscripciones from '../screens/Inscripciones'; 
 import Pilares from '../screens/Pilares'; 
 import Asistente from '../screens/Asistente';
+import { AuthContext } from '../components/StackNavigation.jsx'
 
 const Drawer = createDrawerNavigator(); 
 
@@ -53,43 +54,52 @@ export function DrawerNavigation() {
 
 
 const MenuItems = ( {navigation} ) => { 
+    const { signOut } = useContext(AuthContext);
     return (
-        <DrawerContentScrollView style = { styles.container}> 
+        <DrawerContentScrollView style={styles.container}> 
         
             <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
                 <View style={styles.avatarContainer}>
-                    <MaterialCommunityIcons name="account-circle" size={50} color="white" />
+                    <MaterialCommunityIcons name="account-circle" size={100} color="white" />
                     <Text style={styles.avatarText}>Usuario</Text>
                 </View>
             </TouchableOpacity>   
-                       
+
             <MenuButtom
-             iconLibrary="MaterialCommunityIcons"
-             iconName="lighthouse"
-             text = "Inicio"
-             onPress= { () => navigation.navigate('Inicio')} 
+            iconLibrary="MaterialCommunityIcons"
+            iconName="lighthouse"
+            text="Inicio"
+            onPress={ () => navigation.navigate('Inicio')} 
             /> 
             
             <MenuButtom
-             iconLibrary="MaterialCommunityIcons"
-             iconName="group"
-             text = "Nosotros"
-             onPress= { () => navigation.navigate('Nosotros')}  
+            iconLibrary="FontAwesome"
+            iconName="group"
+            text="Nosotros"
+            onPress= { () => navigation.navigate('Nosotros')}  
             /> 
 
             <MenuButtom
-             iconLibrary="AntDesign"
-             iconName="form"
-             text = "Contacto"
-             url = 'https://www.instagram.com/caeii_oficial/'   
+            iconLibrary="AntDesign"
+            iconName="form"
+            text="Contacto"
+            url='https://www.instagram.com/caeii_oficial/'   
             /> 
 
             <MenuButtom
-             iconLibrary="AntDesign"
-             iconName="scan1"
-             text = "Acreditación"
-             onPress= { () => navigation.navigate('Acreditacion')} 
-            /> 
+            iconLibrary="AntDesign"
+            iconName="scan1"
+            text="Acreditación"
+            onPress={ () => navigation.navigate('Acreditacion')} 
+            />           
+            
+
+            <TouchableOpacity onPress={signOut}>
+                <View style={styles.exitButton}>
+                    <Ionicons name="exit-outline" size={30} color="white" />
+                    <Text style={styles.exitText}>Salir</Text>
+                </View>
+            </TouchableOpacity>
 
         </DrawerContentScrollView>
     )
@@ -111,20 +121,34 @@ const styles = StyleSheet.create({
 
     avatarContainer: {
         flexDirection: 'row',
-        paddingHorizontal: 0,
         alignItems: 'center',
-        paddingBottom: 10,
+        marginTop: 10,
+        marginBottom: 40,
     },
 
     avatarText: {
         marginLeft: 10,
-        fontSize: 20,
+        fontSize: 30,
         fontWeight: 'bold',
-        color: 'white',
+        color: '#f1f1f1',
     },
 
     notificationButton: {
         marginRight: 10,
-    }
+    },
+
+    exitButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 350,
+        marginLeft: 15
+    },
+
+    exitText: {
+        marginLeft: 10,
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#f1f1f1',
+    },
 })
 

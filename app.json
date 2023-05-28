@@ -5,7 +5,12 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    }
   },
   "name": "CAEII-2023-App"
 }

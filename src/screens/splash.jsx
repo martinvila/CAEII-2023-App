@@ -1,7 +1,5 @@
 import React from 'react'
 import { View, ImageBackground, StyleSheet, Text } from 'react-native'
-import { fonts } from 'react-native-elements/dist/config'
-import { color } from 'react-native-reanimated'
 
 
 const Splash = () => {

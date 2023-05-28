@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "name": "Juan Martin Vila",
+        "description": "Estudiante",
+        "location": "Mar del plata",
+        "email": "vilamartin21@gmail.com",
+        "password": "12345678",
+        "token": "i145g1li345hb134i5yv"
+    },
+    {
+        "id": "2",
+        "name": "Juan Cruz Concepcion",
+        "description": "Estudiante",
+        "location": "Mar del plata",
+        "email": "juanconcep0770@gmail.com",
+        "password": "87654321",
+        "token": "h5og89gqp9g8q3n49p3r"
+    }
+]

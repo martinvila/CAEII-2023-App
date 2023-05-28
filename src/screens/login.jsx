@@ -1,16 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, Alert, Image } from 'react-native'
 import { Input } from 'react-native-elements'
 import URLButton from '../components/URLButton'
+import users from '../../recursos/users.json'
+import { AuthContext } from '../components/StackNavigation.jsx'
 
 
 const Login = () => {
-    const [email, setUsername] = useState('')
-    const [password, setPassword] = useState('')    
-    const [hidePassword, setHidePassword] = useState(true)    
+  const [email, setUsername] = useState('')
+  const [password, setPassword] = useState('')    
+  const [hidePassword, setHidePassword] = useState(true)    
+  const { signIn } = useContext(AuthContext);
 
+    
     const handleLogin = () => {
-        Alert.alert('Proximamente')
+      
+        const foundUser = users.find(function(user) {
+          return (user.email === email & user.password === password);
+        });
+        
+        if (foundUser) {
+          signIn(foundUser)
+        }
+        else
+          Alert.alert('Datos incorrectos')
+
         // fetch('https://inscripciones.aareii.org.ar/api/v1/login', {
         //     method: 'POST',
         //     headers: {
