@@ -14,7 +14,7 @@ const iconComponents = {
 };
 
 
-const MenuButtom = ( {text, iconLibrary, iconName, onPress ,  url}) => {
+const MenuButtom = ( {text, iconLibrary, iconName, onPress ,  url, colour}) => {
    
     const handleButtonPress = async () => {
         const supported = await Linking.canOpenURL(url);
@@ -32,7 +32,7 @@ const MenuButtom = ( {text, iconLibrary, iconName, onPress ,  url}) => {
             style = { styles.buttonContainer } 
             onPress= {onPress || handleButtonPress}
         >
-            {IconComponent && <IconComponent name={iconName} size={24} color="black" />}
+            {IconComponent && <IconComponent name={iconName} size={24} color={colour} />}
             <Text style = {styles.text}> {text} </Text>
         </TouchableOpacity>
     )

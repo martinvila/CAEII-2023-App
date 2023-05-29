@@ -69,6 +69,7 @@ const MenuItems = ( {navigation} ) => {
             iconLibrary="MaterialCommunityIcons"
             iconName="lighthouse"
             text="Inicio"
+            colour= "#13839C"
             onPress={ () => navigation.navigate('Inicio')} 
             /> 
             
@@ -76,6 +77,7 @@ const MenuItems = ( {navigation} ) => {
             iconLibrary="FontAwesome"
             iconName="group"
             text="Nosotros"
+            colour= "#13839C"
             onPress= { () => navigation.navigate('Nosotros')}  
             /> 
 
@@ -83,6 +85,7 @@ const MenuItems = ( {navigation} ) => {
             iconLibrary="AntDesign"
             iconName="form"
             text="Contacto"
+            colour= "#13839C"
             url='https://www.instagram.com/caeii_oficial/'   
             /> 
 
@@ -90,6 +93,7 @@ const MenuItems = ( {navigation} ) => {
             iconLibrary="AntDesign"
             iconName="scan1"
             text="Acreditación"
+            colour= "#13839C"
             onPress={ () => navigation.navigate('Acreditacion')} 
             />           
             
