@@ -41,7 +41,7 @@ const MenuButtom = ( {text, iconLibrary, iconName, onPress ,  url, colour}) => {
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        backgroundColor: '#d9d9d9', 
+        backgroundColor: '#404040', 
         alignItems: 'center',
         flexDirection: 'row',
         borderRadius: 10, 
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
     },
     text: {
-        color: 'black',
+        color: 'white',
         fontSize: 18,
         fontWeight: 'bold',
         marginStart: 10,

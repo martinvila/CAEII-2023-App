@@ -12,6 +12,7 @@ import Cronograma from '../screens/Cronograma';
 import Inscripciones from '../screens/Inscripciones'; 
 import Pilares from '../screens/Pilares'; 
 import Asistente from '../screens/Asistente';
+import Noche from '../screens/Noche';  
 import { AuthContext } from '../components/StackNavigation.jsx'
 
 const Drawer = createDrawerNavigator(); 
@@ -23,7 +24,7 @@ export function DrawerNavigation() {
             drawerContent={ (props)=> <MenuItems {...props}/> }
             screenOptions={{
                 headerStyle: {
-                  backgroundColor: "#101010", // Cambiar el color del encabezado aquí
+                  backgroundColor: "black", // Cambiar el color del encabezado aquí
                 },
                 headerTitleAlign: 'center',
                 headerTintColor: 'white', // Cambiar el color del texto del encabezado aquí
@@ -47,6 +48,7 @@ export function DrawerNavigation() {
             <Drawer.Screen name="Inscripciones" component={ Inscripciones } />
             <Drawer.Screen name="Pilares" component={ Pilares } /> 
             <Drawer.Screen name="Asistente" component={ Asistente } />
+            <Drawer.Screen name="Noche" component={ Noche } /> 
 
         </Drawer.Navigator>
     );
