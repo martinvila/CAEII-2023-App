@@ -1,12 +1,16 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native'; 
+import React from 'react'
+import { View, StyleSheet, Alert } from 'react-native'
+import QRCodeScanner from 'react-native-qrcode-scanner'
+import { RNCamera } from 'react-native-camera'
 
 const Acreditacion = () => {
     return (
-        <View style={styles.container}>
-        </View>
-    );
-};
+        <QRCodeScanner
+            onRead={(data) => Alert.alert(data)}
+            flashMode={RNCamera.Constants.FlashMode.torch}
+        />
+    )
+}
 
 
 const styles = StyleSheet.create({
@@ -14,7 +18,7 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: "#101010"
     },
-});
+})
 
 
-export default Acreditacion; 
+export default Acreditacion

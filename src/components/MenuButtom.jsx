@@ -50,9 +50,9 @@ const styles = StyleSheet.create({
 
     },
     text: {
-        color: 'white',
+        color: '#F5F5F5',
         fontSize: 18,
-        fontWeight: 'bold',
+        fontFamily: 'avenir-black',
         marginStart: 10,
     },
 })

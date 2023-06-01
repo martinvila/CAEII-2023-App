@@ -4,7 +4,7 @@ import { DrawerContentScrollView, createDrawerNavigator  } from "@react-navigati
 import { MaterialCommunityIcons, Ionicons, FontAwesome } from '@expo/vector-icons';
 import MenuButtom from './MenuButtom';
 import Perfil from "../screens/Perfil" ;
-import Acreditation from '../screens/Acreditation';
+//import Acreditation from '../screens/Acreditation';
 import Home from '../screens/Home';
 import Nosotros from '../screens/Nosotros'; 
 import Notificaciones from '../screens/Notificaciones';  
@@ -26,15 +26,18 @@ export function DrawerNavigation() {
                 headerStyle: {
                   backgroundColor: "black", // Cambiar el color del encabezado aquí
                 },
+                headerTitleStyle: {
+                    fontFamily: 'avenir-black',
+                },
                 headerTitleAlign: 'center',
-                headerTintColor: 'white', // Cambiar el color del texto del encabezado aquí
+                headerTintColor: '#F5F5F5', // Cambiar el color del texto del encabezado aquí
 
                 headerRight: () => (
                     <TouchableOpacity 
                         style={styles.notificationButton}
                         //onPress={(props) => navigation.navigate('Notificaciones')}
                     >
-                        <Ionicons name="notifications-outline" size={24} color="white" />
+                        <Ionicons name="notifications-outline" size={24} color="#F5F5F5" />
                     </TouchableOpacity>
                 )      
             }}
@@ -42,7 +45,7 @@ export function DrawerNavigation() {
             <Drawer.Screen name="Inicio" component={ Home } />
             <Drawer.Screen name="Perfil" component={ Perfil } />
             <Drawer.Screen name="Nosotros" component={ Nosotros } />
-            <Drawer.Screen name="Acreditacion" component={ Acreditation } />
+            {/* <Drawer.Screen name="Acreditacion" component={ Acreditation } /> */}
             <Drawer.Screen name="Notificaciones" component={ Notificaciones } />
             <Drawer.Screen name="Cronograma" component={ Cronograma } />
             <Drawer.Screen name="Inscripciones" component={ Inscripciones } />
@@ -62,7 +65,7 @@ const MenuItems = ( {navigation} ) => {
         
             <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
                 <View style={styles.avatarContainer}>
-                    <MaterialCommunityIcons name="account-circle" size={100} color="white" />
+                    <MaterialCommunityIcons name="account-circle" size={100} color="#F5F5F5" />
                     <Text style={styles.avatarText}>Usuario</Text>
                 </View>
             </TouchableOpacity>   
@@ -91,18 +94,18 @@ const MenuItems = ( {navigation} ) => {
             url='https://www.instagram.com/caeii_oficial/'   
             /> 
 
-            <MenuButtom
+            {/* <MenuButtom
             iconLibrary="AntDesign"
             iconName="scan1"
             text="Acreditación"
             colour= "#13839C"
             onPress={ () => navigation.navigate('Acreditacion')} 
-            />           
+            />            */}
             
 
             <TouchableOpacity onPress={signOut}>
                 <View style={styles.exitButton}>
-                    <Ionicons name="exit-outline" size={30} color="white" />
+                    <Ionicons name="exit-outline" size={30} color="#F5F5F5" />
                     <Text style={styles.exitText}>Salir</Text>
                 </View>
             </TouchableOpacity>
@@ -135,8 +138,8 @@ const styles = StyleSheet.create({
     avatarText: {
         marginLeft: 10,
         fontSize: 30,
-        fontWeight: 'bold',
-        color: '#f1f1f1',
+        fontFamily: 'avenir-black',
+        color: '#F5F5F5',
     },
 
     notificationButton: {
@@ -153,8 +156,8 @@ const styles = StyleSheet.create({
     exitText: {
         marginLeft: 10,
         fontSize: 20,
-        fontWeight: 'bold',
-        color: '#f1f1f1',
+        fontFamily: 'avenir-black',
+        color: '#F5F5F5',
     },
 })
 

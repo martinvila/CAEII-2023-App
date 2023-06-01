@@ -51,5 +51,9 @@
 	<false/>
   <key>UIStatusBarStyle</key>
   <string>UIStatusBarStyleDefault</string>
+  <key>NSCameraUsageDescription</key>
+  <string>YOUR TEXT</string>
+  <key>NSCalendarsUsageDescription</key>
+  <string>YOUR TEXT</string>
 </dict>
 </plist>

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useReducer, useEffect, useMemo, createContext } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
@@ -9,12 +9,13 @@ import Login  from '../screens/Login.jsx'
 import Splash from '../screens/Splash.jsx'
 
 
-export const AuthContext = React.createContext()
+export const AuthContext = createContext()
+
 const Stack = createNativeStackNavigator()
 
 export function StackNavigation() {
 
-    const [state, dispatch] = React.useReducer(
+    const [state, dispatch] = useReducer(
         (prevState, action) => {
           switch (action.type) {
             case 'RESTORE_TOKEN':
@@ -44,7 +45,7 @@ export function StackNavigation() {
         }
     );
     
-    React.useEffect(() => {
+    useEffect(() => {
         const bootstrapAsync = async () => {
           let userToken = null;
     
@@ -60,7 +61,7 @@ export function StackNavigation() {
         bootstrapAsync();
     }, []);
     
-    const authContext = React.useMemo(() => ({
+    const authContext = useMemo(() => ({
         signIn: async (data) => {
             dispatch({ type: 'SIGN_IN', token: data.token });
         },

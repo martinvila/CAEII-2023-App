@@ -7,7 +7,7 @@ const Perfil = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-            <MaterialCommunityIcons name="account-circle" size={200} color= 'white' />
+            <MaterialCommunityIcons name="account-circle" size={200} color= '#F5F5F5' />
       </View>
 
       <View style={styles.infoContainer}>
@@ -20,7 +20,7 @@ const Perfil = () => {
 
       <View style={styles.underContainer}>
           <View style={styles.under}>
-            <Ionicons name="qr-code-outline" size={300} color="white" />
+            <Ionicons name="qr-code-outline" size={300} color="#F5F5F5" />
           </View>
       </View>
 
@@ -60,15 +60,15 @@ const styles = StyleSheet.create({
     borderRadius: 60,
   },
   infoContainer: {
-    paddingHorizontal: 50,
+    paddingHorizontal: 49,
     marginTop: -10,
   },
   name: {
     fontSize: 30,
-    fontWeight: 'bold',
+    fontFamily: 'avenir-black',
     marginBottom: 20,
     textAlign: 'center',
-    color: 'white',
+    color: '#F5F5F5',
   },
   ciudad: {
     fontSize: 16,
@@ -79,7 +79,8 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 8,
     paddingHorizontal: 10,
     paddingVertical: 10,
-    color: 'white',
+    fontFamily: 'avenir-medium',
+    color: '#F5F5F5',
   }, 
   carrera: {
     fontSize: 16,
@@ -88,8 +89,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#13839C',
     //borderRadius: 5, 
     paddingHorizontal: 10, 
-    paddingVertical: 10, 
-    color: 'white',
+    paddingVertical: 10,
+    fontFamily: 'avenir-medium',
+    color: '#F5F5F5',
   },
   instagram: {
     fontSize: 16,
@@ -99,8 +101,9 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
     paddingHorizontal: 10, 
-    paddingVertical: 10, 
-    color: 'white',
+    paddingVertical: 10,
+    fontFamily: 'avenir-medium',
+    color: '#F5F5F5',
   },
   
 });

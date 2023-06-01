@@ -77,7 +77,7 @@ const Home = ({ navigation }) => {
           />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button5} onPress={() => handleButtonPress('Pilares')}>
+        <TouchableOpacity style={styles.button5} onPress={() => handleButtonPress('Asistente')}>
           <Image
             source={require('../../recursos/images/asistente.png')}
             style={styles.button2Image}
