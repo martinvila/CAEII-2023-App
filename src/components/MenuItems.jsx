@@ -6,7 +6,7 @@ import MenuButtom from './MenuButtom';
 
 //import Acreditation from '../screens/Acreditation';
 
-import { AuthContext } from '../context/StackNavigationContext'
+import { AuthContext } from '../context/StackNavigation'
 
 const MenuItems = ( {navigation} ) => { 
     const { signOut } = useContext(AuthContext);

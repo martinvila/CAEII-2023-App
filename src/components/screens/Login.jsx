@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Alert, Image } from 'react-na
 import { Input } from 'react-native-elements'
 import URLButton from '../URLButton.jsx'
 import { handleLogin } from '../../handleLogin.js'
-import { AuthContext } from '../../context/StackNavigationContext.jsx'
+import { AuthContext } from '../../context/StackNavigation.jsx'
 
 
 const Login = () => {
