@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View } from 'react-native'
 import * as Font from 'expo-font'
-import  StackNavigation  from './src/context/StackNavigationContext'
+import  StackNavigation  from './src/context/StackNavigation'
 //import Acreditacion from './src/screens/Acreditation.jsx'
 
 function App() {
