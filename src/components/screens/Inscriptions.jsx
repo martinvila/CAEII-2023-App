@@ -27,7 +27,7 @@ const Inscripciones = () => {
           activeDotColor="#13839C" // Cambia el color del punto activo
           >
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_1.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_1.jpg")} style={styles.img} />
               <Text style={styles.title}>Conferencia 1</Text>
               <Text style={styles.text}>
                 Marcos describe como fueron sus pasos en esta industria 
@@ -41,10 +41,10 @@ const Inscripciones = () => {
             </View>
 
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_2.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_2.jpg")} style={styles.img} />
               <Text style={styles.title}>Conferencia 2</Text>
               <Text style={styles.text}>
-              Marcos describe como fueron sus pasos en esta industria 
+                Marcos describe como fueron sus pasos en esta industria 
                 fascinante, comenzando desde que era un niño que soñaba
                 con ser astronauta, hasta el día de hoy donde ya cuenta
                 con la experiencia de haber formado parte la Nasa.
@@ -55,10 +55,10 @@ const Inscripciones = () => {
             </View>
 
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_3.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_3.jpg")} style={styles.img} />
               <Text style={styles.title}>Conferencia 3</Text>
               <Text style={styles.text}>
-              Marcos describe como fueron sus pasos en esta industria 
+                Marcos describe como fueron sus pasos en esta industria 
                 fascinante, comenzando desde que era un niño que soñaba
                 con ser astronauta, hasta el día de hoy donde ya cuenta
                 con la experiencia de haber formado parte la Nasa.
@@ -69,10 +69,10 @@ const Inscripciones = () => {
             </View>
             
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_4.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_4.jpg")} style={styles.img} />
               <Text style={styles.title}>Conferencia 4</Text>
               <Text style={styles.text}>
-              Marcos describe como fueron sus pasos en esta industria 
+                Marcos describe como fueron sus pasos en esta industria 
                 fascinante, comenzando desde que era un niño que soñaba
                 con ser astronauta, hasta el día de hoy donde ya cuenta
                 con la experiencia de haber formado parte la Nasa.
@@ -90,7 +90,7 @@ const Inscripciones = () => {
           activeDotColor="#13839C" // Cambia el color del punto activo
           >
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_1.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_1.jpg")} style={styles.img} />
               <Text style={styles.title}>Visita 1</Text>
               <Text style={styles.text}>
                 Marcos describe como fueron sus pasos en esta industria 
@@ -104,10 +104,10 @@ const Inscripciones = () => {
             </View>
 
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_2.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_2.jpg")} style={styles.img} />
               <Text style={styles.title}>Visita 2</Text>
               <Text style={styles.text}>
-              Marcos describe como fueron sus pasos en esta industria 
+                Marcos describe como fueron sus pasos en esta industria 
                 fascinante, comenzando desde que era un niño que soñaba
                 con ser astronauta, hasta el día de hoy donde ya cuenta
                 con la experiencia de haber formado parte la Nasa.
@@ -118,10 +118,10 @@ const Inscripciones = () => {
             </View>
 
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_3.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_3.jpg")} style={styles.img} />
               <Text style={styles.title}>Visita 3</Text>
               <Text style={styles.text}>
-              Marcos describe como fueron sus pasos en esta industria 
+                Marcos describe como fueron sus pasos en esta industria 
                 fascinante, comenzando desde que era un niño que soñaba
                 con ser astronauta, hasta el día de hoy donde ya cuenta
                 con la experiencia de haber formado parte la Nasa.
@@ -132,10 +132,10 @@ const Inscripciones = () => {
             </View>
             
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_4.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_4.jpg")} style={styles.img} />
               <Text style={styles.title}>Visita 4</Text>
               <Text style={styles.text}>
-              Marcos describe como fueron sus pasos en esta industria 
+                Marcos describe como fueron sus pasos en esta industria 
                 fascinante, comenzando desde que era un niño que soñaba
                 con ser astronauta, hasta el día de hoy donde ya cuenta
                 con la experiencia de haber formado parte la Nasa.
@@ -153,7 +153,7 @@ const Inscripciones = () => {
           activeDotColor="#13839C" // Cambia el color del punto activo
           >
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_1.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_1.jpg")} style={styles.img} />
               <Text style={styles.title}>Taller 1</Text>
               <Text style={styles.text}>
                 Marcos describe como fueron sus pasos en esta industria 
@@ -167,10 +167,10 @@ const Inscripciones = () => {
             </View>
 
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_2.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_2.jpg")} style={styles.img} />
               <Text style={styles.title}>Taller 2</Text>
               <Text style={styles.text}>
-              Marcos describe como fueron sus pasos en esta industria 
+                Marcos describe como fueron sus pasos en esta industria 
                 fascinante, comenzando desde que era un niño que soñaba
                 con ser astronauta, hasta el día de hoy donde ya cuenta
                 con la experiencia de haber formado parte la Nasa.
@@ -181,10 +181,10 @@ const Inscripciones = () => {
             </View>
 
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_3.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_3.jpg")} style={styles.img} />
               <Text style={styles.title}>Taller 3</Text>
               <Text style={styles.text}>
-              Marcos describe como fueron sus pasos en esta industria 
+                Marcos describe como fueron sus pasos en esta industria 
                 fascinante, comenzando desde que era un niño que soñaba
                 con ser astronauta, hasta el día de hoy donde ya cuenta
                 con la experiencia de haber formado parte la Nasa.
@@ -195,10 +195,10 @@ const Inscripciones = () => {
             </View>
             
             <View style={styles.slide}>
-              <Image source={require("../../recursos/images/Verano_4.jpg")} style={styles.img} />
+              <Image source={require("../../../recursos/images/Verano_4.jpg")} style={styles.img} />
               <Text style={styles.title}>Taller 4</Text>
               <Text style={styles.text}>
-              Marcos describe como fueron sus pasos en esta industria 
+                Marcos describe como fueron sus pasos en esta industria 
                 fascinante, comenzando desde que era un niño que soñaba
                 con ser astronauta, hasta el día de hoy donde ya cuenta
                 con la experiencia de haber formado parte la Nasa.

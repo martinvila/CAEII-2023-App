@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { View } from 'react-native'
 import * as Font from 'expo-font'
-import { StackNavigation } from './src/components/StackNavigation.jsx'
+import  StackNavigation  from './src/context/StackNavigationContext'
 //import Acreditacion from './src/screens/Acreditation.jsx'
 
-export default function App() {
+function App() {
   
   const [fontsLoaded, setFontsLoaded] = useState(false)
   
@@ -28,7 +28,12 @@ export default function App() {
   }
 
   return (
-      <StackNavigation />
+      <StackNavigation>
+
+      </StackNavigation>
+
+      
       //<Acreditacion />
   )
 }
+export default App;

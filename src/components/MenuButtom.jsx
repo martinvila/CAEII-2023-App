@@ -14,7 +14,7 @@ const iconComponents = {
 };
 
 
-const MenuButtom = ( {text, iconLibrary, iconName, onPress ,  url, colour}) => {
+const MenuButton = ( {text, iconLibrary, iconName, onPress ,  url, colour}) => {
    
     const handleButtonPress = async () => {
         const supported = await Linking.canOpenURL(url);
@@ -58,4 +58,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default MenuButtom; 
+export default MenuButton; 

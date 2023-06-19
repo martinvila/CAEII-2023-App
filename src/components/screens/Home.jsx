@@ -1,10 +1,6 @@
-import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity , Image, Text} from "react-native";
+import React, { useState, useRef } from "react";
+import { StyleSheet, View, TouchableOpacity , Image, PanResponder, Animated} from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
-import { useState, useRef } from 'react';
-import {  PanResponder, Animated } from 'react-native';
-
-import { Ionicons } from '@expo/vector-icons';
 
 const Home = ({ navigation }) => {
 
@@ -45,7 +41,7 @@ const Home = ({ navigation }) => {
       <View style={styles.buttonRow}>
         <TouchableOpacity style={styles.button1} onPress={() => handleButtonPress('Inscripciones')}>
           <Image
-            source={require('../../recursos/images/Inscrpcion.png')}
+            source={require('../../../recursos/images/Inscrpcion.png')}
             style={styles.button1Image}
             resizeMode="contain"
           />
@@ -53,7 +49,7 @@ const Home = ({ navigation }) => {
 
         <TouchableOpacity style={styles.button2} onPress={() => handleButtonPress('Pilares')}>
           <Image
-            source={require('../../recursos/images/pilares_menu.png')}
+            source={require('../../../recursos/images/pilares_menu.png')}
             style={styles.button2Image}
             resizeMode="contain"
           />
@@ -62,7 +58,7 @@ const Home = ({ navigation }) => {
 
       <TouchableOpacity style={styles.button3} onPress={() => handleButtonPress('Cronograma')}>
         <Image
-          source={require('../../recursos/images/CronogramaSINFONDO.png')}
+          source={require('../../../recursos/images/CronogramaSINFONDO.png')}
           style={styles.button3Image}
           resizeMode="contain"
         />
@@ -71,7 +67,7 @@ const Home = ({ navigation }) => {
       <View style={styles.buttonRow2}>
         <TouchableOpacity style={styles.button4} onPress={() => handleButtonPress('Asistente')}>
           <Image
-            source={require('../../recursos/images/info.png')}
+            source={require('../../../recursos/images/info.png')}
             style={styles.button1Image}
             resizeMode="contain"
           />
@@ -79,7 +75,7 @@ const Home = ({ navigation }) => {
 
         <TouchableOpacity style={styles.button5} onPress={() => handleButtonPress('Asistente')}>
           <Image
-            source={require('../../recursos/images/asistente.png')}
+            source={require('../../../recursos/images/asistente.png')}
             style={styles.button2Image}
             resizeMode="contain"
           />
@@ -89,7 +85,7 @@ const Home = ({ navigation }) => {
           <Animated.View style={floatingButtonStyle} {...panResponder.panHandlers}>
             <TouchableOpacity onPress={() =>  handleButtonPress('Noche')}>
                 <Image
-                  source={require('../../recursos/images/noche.png')}
+                  source={require('../../../recursos/images/noche.png')}
                   style={styles.buttonNImage}
                   resizeMode="contain"
                 />

@@ -7,7 +7,7 @@ const NocheScreen = () => {
     <LinearGradient colors={['#000000', '#1A237E']} style={styles.container}>
       <View style={styles.logoContainer}>
         <Image
-          source={require('../../recursos/images/noche.png')}
+          source={require('../../../recursos/images/noche.png')}
           style={styles.logoImage}
         />
         <Text style={styles.logoText}>Fiesta de Noche</Text>

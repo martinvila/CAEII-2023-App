@@ -16,5 +16,14 @@
         "email": "juanconcep0770@gmail.com",
         "password": "87654321",
         "token": "h5og89gqp9g8q3n49p3r"
+    },
+    {
+        "id": "3",
+        "name": "Francis tenaglia",
+        "description": "Estudiante",
+        "location": "Mar del plata",
+        "email": "fgtenaglia96@gmail.com",
+        "password": "123123123",
+        "token": "j5og89gqp9g8q3n49p3r"
     }
 ]

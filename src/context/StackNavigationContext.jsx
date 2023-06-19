@@ -4,16 +4,16 @@ import { StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 //import { getItemAsync } from 'expo-secure-store'
-import { DrawerNavigation } from './DrawerNavigation.jsx'
-import Login  from '../screens/Login.jsx'
-import Splash from '../screens/Splash.jsx'
+import Splash from '../components/screens/Splash.jsx'
+import Login  from '../components/screens/Login.jsx'
+import  DrawerNavigation  from '../components/DrawerNavigation.jsx'
 
 
 export const AuthContext = createContext()
 
 const Stack = createNativeStackNavigator()
 
-export function StackNavigation() {
+const StackNavigation = () => {
 
     const [state, dispatch] = useReducer(
         (prevState, action) => {
@@ -109,3 +109,5 @@ const styles = StyleSheet.create({
       flex: 1   
     }
 });
+
+export default  StackNavigation;

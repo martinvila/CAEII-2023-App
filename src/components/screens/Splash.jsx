@@ -28,7 +28,7 @@ const Splash = () => {
             <StatusBar style="light" />
             <ImageBackground
                 style={styles.image}
-                source={require('../../recursos/images/splash.png')}
+                source={require('../../../recursos/images/splash.png')}
                 resizeMode={'cover'}>
                 <Animated.View style={{backgroundColor: '#9b483a', borderRadius: 20, opacity: fadeAnim}}>
                     <Text style={styles.lema}>NAVEGÁ EL PRESENTE,</Text>

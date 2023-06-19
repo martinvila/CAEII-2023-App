@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, Alert, Image } from 'react-native'
 import { Input } from 'react-native-elements'
-import URLButton from '../components/URLButton.jsx'
-import { handleLogin } from '../handleLogin.js'
-import { AuthContext } from '../components/StackNavigation.jsx'
+import URLButton from '../URLButton.jsx'
+import { handleLogin } from '../../handleLogin.js'
+import { AuthContext } from '../../context/StackNavigationContext.jsx'
 
 
 const Login = () => {
@@ -14,7 +14,7 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
-        <Image style={styles.logo} source={require('../../recursos/images/logoCAEII2.png')}/>
+        <Image style={styles.logo} source={require('../../../recursos/images/logoCAEII2.png')}/>
         <Input
             style={styles.text}
             placeholderTextColor='#F5F5F5'
@@ -29,7 +29,7 @@ const Login = () => {
             onChangeText={text => setPassword(text)}    
             rightIcon={
               <TouchableOpacity activeOpacity = { 0.3 } style={styles.btnVisibility} onPress = {() => setHidePassword(!hidePassword)}>
-                  <Image style={styles.btnImage} tintColor={'#F5F5F5'} source={(hidePassword) ? require('../../recursos/images/ic_show_password.png') : require('../../recursos/images/ic_hide_password.png') }/>
+                  <Image style={styles.btnImage} tintColor={'#F5F5F5'} source={(hidePassword) ? require('../../../recursos/images/ic_show_password.png') : require('../../../recursos/images/ic_hide_password.png') }/>
               </TouchableOpacity>
               }
         />
@@ -56,6 +56,13 @@ const styles = StyleSheet.create({
     color: '#F5F5F5', 
     fontFamily: 'avenir-medium'
   },
+  logo: {
+    resizeMode: 'contain',
+    height: '25%',
+    width: '100%',
+    marginBottom: 40,
+    marginTop: 30
+  },
   button: {
     backgroundColor: '#13839c',
     paddingVertical: 15,
@@ -80,15 +87,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     height: '100%',
     width: '100%'
-  },
-  logo: {
-    resizeMode: 'contain',
-    height: '25%',
-    width: '100%',
-    marginBottom: 40,
-    marginTop: 30
   }
 })
 
-
-export default Login
+export default Login;
