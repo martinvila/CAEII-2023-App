@@ -17,6 +17,7 @@ import MenuItems from './MenuItems';
 const Drawer = createDrawerNavigator(); 
 
 const DrawerNavigation = () => {
+    
     return (
         <Drawer.Navigator
             drawerContent={ (props)=> <MenuItems {...props}/> }

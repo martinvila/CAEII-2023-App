@@ -11,8 +11,8 @@ import { AuthContext } from '../context/StackNavigation'
 const MenuItems = ( {navigation} ) => { 
     const { signOut } = useContext(AuthContext);
     return (
-        <DrawerContentScrollView style={styles.container}> 
-        
+        <DrawerContentScrollView contentContainerStyle={styles.container} > 
+        <View>
             <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
                 <View style={styles.avatarContainer}>
                     <MaterialCommunityIcons name="account-circle" size={100} color="#F5F5F5" />
@@ -35,30 +35,32 @@ const MenuItems = ( {navigation} ) => {
             colour= "#13839C"
             onPress= { () => navigation.navigate('Nosotros')}  
             /> 
-
+            
             <MenuButtom
             iconLibrary="AntDesign"
             iconName="form"
             text="Contacto"
             colour= "#13839C"
             url='https://www.instagram.com/caeii_oficial/'   
-            /> 
-
+            />
+         
             {/* <MenuButtom
             iconLibrary="AntDesign"
             iconName="scan1"
             text="Acreditación"
             colour= "#13839C"
             onPress={ () => navigation.navigate('Acreditacion')} 
-            />            */}
-            
+        />            */}
+        </View>    
 
+        <View style={styles.exitContainer}>
             <TouchableOpacity onPress={signOut}>
                 <View style={styles.exitButton}>
                     <Ionicons name="exit-outline" size={30} color="#F5F5F5" />
                     <Text style={styles.exitText}>Salir</Text>
                 </View>
             </TouchableOpacity>
+        </View>
 
         </DrawerContentScrollView>
     )
@@ -69,8 +71,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#101010",
-        padding: 15, 
+        padding: 15,
+        justifyContent:'space-between'
     }, 
+    exitContainer: {
+        padding:20,        
+    },
     title: {
         fontSize: 20,
         fontWeight: 'bold',
@@ -90,9 +96,9 @@ const styles = StyleSheet.create({
     },
     exitButton: {
         flexDirection: 'row',
-        alignItems: 'center',
-        marginTop: 350,
-        marginLeft: 15
+        display: 'flex',
+        
+
     },
     exitText: {
         marginLeft: 10,
