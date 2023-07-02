@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native'; 
 
-const Asistente = () => {
+const Attendance = () => {
     return (
         <View style={styles.container}>
         </View>
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Asistente; 
+export default Attendance; 
