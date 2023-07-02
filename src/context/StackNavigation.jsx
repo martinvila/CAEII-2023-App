@@ -6,8 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 //import { getItemAsync } from 'expo-secure-store'
 import Splash from '../components/screens/Splash.jsx'
 import Login  from '../components/screens/Login.jsx'
-import  DrawerNavigation  from '../components/DrawerNavigation.jsx'
-
+import Tabs from '../components/BottomTabs.jsx'
 
 export const AuthContext = createContext()
 
@@ -43,7 +42,7 @@ const StackNavigation = () => {
           isSignout: false,
           userToken: null,
         }
-    );
+    )
     
     useEffect(() => {
         const bootstrapAsync = async () => {
@@ -59,7 +58,7 @@ const StackNavigation = () => {
         };
     
         bootstrapAsync();
-    }, []);
+    }, [])
     
     const authContext = useMemo(() => ({
         signIn: async (data) => {
@@ -93,8 +92,8 @@ const StackNavigation = () => {
                     ) : (
                     // Usuario logueado
                     <Stack.Screen
-                        name="Home"
-                        component={DrawerNavigation}
+                        name="Main"
+                        component={Tabs}
                         options={{headerShown: false}}
                     />
                     )}
@@ -108,6 +107,6 @@ const styles = StyleSheet.create({
     container: {
       flex: 1   
     }
-});
+})
 
-export default  StackNavigation;
+export default  StackNavigation

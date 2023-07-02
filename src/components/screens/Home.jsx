@@ -1,246 +1,128 @@
-import React, { useState, useRef } from "react";
-import { StyleSheet, View, TouchableOpacity , Image, PanResponder, Animated} from "react-native";
-import { LinearGradient } from 'expo-linear-gradient';
+import React from "react"
+import { StyleSheet, View, TouchableOpacity, Text, Image} from "react-native"
+import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons'
+import HomeButton from '../HomeButton'
+import Cronograma from './Schedule'
+import Pilares from './Pilares'
+import Nosotros from './Us'
+import Asistente from './Assistant'
+
 
 const Home = ({ navigation }) => {
+	return (
+		<View style={styles.container}>
+			<Image style={styles.logo} source={require('../../../recursos/images/logoCAEII.png')}/>
 
-  const handleButtonPress = (screenName) => {
-    navigation.navigate(screenName);
-  };
-  
-  const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 });
-  
-  const position = useRef(new Animated.ValueXY()).current;
-  
-  const panResponder = PanResponder.create({
-    onMoveShouldSetPanResponder: () => true,
-    onPanResponderMove: Animated.event([
-      null,
-      {
-        dx: position.x,
-        dy: position.y,
-      },
-    ]),
-    onPanResponderRelease: () => {
-      // Restablece la posición del botón flotante al soltar
-      Animated.spring(position, {
-        toValue: { x: 0, y: 0 },
-        useNativeDriver: false,
-      }).start();
-    },
-  });
+			<View style={styles.buttonRow}>
+				<HomeButton
+				iconLibrary="MaterialCommunityIcons"
+				iconName="calendar-text"
+				text="Cronograma"
+				size={45}
+				colour= "#ffffff"
+				onPress={() => navigation.navigate('Cronograma')} 
+				/> 
 
-  
-  const floatingButtonStyle = {
-    ...styles.floatingButton,
-    transform: position.getTranslateTransform(),
-  };
-  
-  return (
-    <LinearGradient colors={['black', '#202020']} style={styles.container}>
-      <View style={styles.buttonRow}>
-        <TouchableOpacity style={styles.button1} onPress={() => handleButtonPress('Inscripciones')}>
-          <Image
-            source={require('../../../recursos/images/Inscrpcion.png')}
-            style={styles.button1Image}
-            resizeMode="contain"
-          />
-        </TouchableOpacity>
+				<HomeButton
+				iconLibrary="MaterialCommunityIcons"
+				iconName="electron-framework"
+				text="Pilares"
+				size={45}
+				colour= "#ffffff"
+				onPress={() => navigation.navigate('Pilares')} 
+				/> 
+			</View>
 
-        <TouchableOpacity style={styles.button2} onPress={() => handleButtonPress('Pilares')}>
-          <Image
-            source={require('../../../recursos/images/pilares_menu.png')}
-            style={styles.button2Image}
-            resizeMode="contain"
-          />
-        </TouchableOpacity>
-      </View>
+				<HomeButton
+				iconLibrary="MaterialCommunityIcons"
+				iconName="lighthouse"
+				text=""
+				size={90}
+				colour= "#ffffff"
+				onPress={() => navigation.navigate('Home')}
+				/> 
+			
+			<View style={styles.buttonRow}>
+				<HomeButton
+				iconLibrary="Ionicons"
+				iconName="people"
+				text="Nosotros"
+				size={45}
+				colour= "#ffffff"
+				onPress={() => navigation.navigate('Us')} 
+				/> 
 
-      <TouchableOpacity style={styles.button3} onPress={() => handleButtonPress('Cronograma')}>
-        <Image
-          source={require('../../../recursos/images/CronogramaSINFONDO.png')}
-          style={styles.button3Image}
-          resizeMode="contain"
-        />
-      </TouchableOpacity>
+				<HomeButton
+				iconLibrary="Ionicons"
+				iconName="map-outline"
+				text="Asistente"
+				size={45}
+				colour= "#ffffff"
+				onPress={() => navigation.navigate('Asistente')} 
+				/> 
+			</View>
 
-      <View style={styles.buttonRow2}>
-        <TouchableOpacity style={styles.button4} onPress={() => handleButtonPress('Asistente')}>
-          <Image
-            source={require('../../../recursos/images/info.png')}
-            style={styles.button1Image}
-            resizeMode="contain"
-          />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button5} onPress={() => handleButtonPress('Asistente')}>
-          <Image
-            source={require('../../../recursos/images/asistente.png')}
-            style={styles.button2Image}
-            resizeMode="contain"
-          />
-        </TouchableOpacity>
-      </View>
-         
-          <Animated.View style={floatingButtonStyle} {...panResponder.panHandlers}>
-            <TouchableOpacity onPress={() =>  handleButtonPress('Noche')}>
-                <Image
-                  source={require('../../../recursos/images/noche.png')}
-                  style={styles.buttonNImage}
-                  resizeMode="contain"
-                />
-            </TouchableOpacity>
-          </Animated.View>
-        
-
-
-    </LinearGradient>
-  );
-};
+				{/* <Animated.View style={floatingButtonStyle} {...panResponder.panHandlers}>
+					<TouchableOpacity onPress={() =>  handleButtonPress('Noche')}>
+						<Image
+						source={require('../../../recursos/images/noche.png')}
+						style={styles.buttonNImage}
+						resizeMode="contain"
+						/>
+					</TouchableOpacity>
+				</Animated.View> */}
+		</View>
+	)
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#101010",
+    backgroundColor: "#f7f6f6",
     alignItems: "center",
-    justifyContent: "center",
-    marginTop: -80,
+  },
+  logo: {
+    resizeMode: 'contain',
+    height: '25%',
+    width: '75%',
+	marginTop: 10
   },
   buttonRow: {
     flexDirection: "row",
-    marginBottom: 10,
+    padding: 15,
   },
-  button1: {
-    width: 134,
-    height: 134,
-    backgroundColor: "#404040",
-    borderRadius: 100,
-    marginRight: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: '#485E88',
-    shadowOffset: {
-      width: 2,
-      height: 2,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    elevation: 10,
-  },
-  button2: {
-    width: 134,
-    height: 134,
-    backgroundColor: "#404040",
-    borderRadius: 100,
-    marginLeft: 100,
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: '#485E88',
-    shadowOffset: {
-      width: 2,
-      height: 2,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    elevation: 10,
-  },
-  button3: {
-    width: 172,
-    height: 172,
-    backgroundColor: "#404040",
-    borderRadius: 100,
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: '#485E88',
-    shadowOffset: {
-      width: 2,
-      height: 2,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    elevation: 10,
-    marginBottom: 10,
-  },
-  buttonRow2: {
-    flexDirection: "row",
-  },
-  button4: {
-    width: 134,
-    height: 134,
-    backgroundColor: "#404040",
-    borderRadius: 100,
-    marginRight: 100,
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: '#485E88',
-    shadowOffset: {
-      width: 2,
-      height: 2,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    elevation: 10,
-  },
-  button5: {
-    width: 134,
-    height: 134,
-    backgroundColor: "#404040",
-    borderRadius: 100,
-    marginLeft: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: '#485E88',
-    shadowOffset: {
-      width: 2,
-      height: 2,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    elevation: 10,
-  },
-  button1Image: {
-    width: 180,
-    height: 180,
-    borderRadius: 50,
-  },
-  button2Image: {
-    width: 175,
-    height: 175,
-    borderRadius: 50,
-  },
-  button3Image: {
-    width: 172,
-    height: 172,
-    borderRadius: 50,
-  },
-  floatingButton: {
-    position: 'absolute',
-    bottom: 16,
-    right: 16,
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    backgroundColor: '#0A1E32',
-    alignItems: 'center',
-    justifyContent: 'center',
-    shadowColor: 'white',
-    shadowOffset: {
-      width: 5,
-      height: 5,
-    },
-    shadowOpacity: 50,
-    shadowRadius: 30,
-    elevation: 5,
-  
-  },
-  buttonNImage: {
-    width: 90,
-    height: 90,
-    borderRadius: 50,
-    marginLeft: 11,
-    marginRight: 13,
-  },
-  
-});
 
-export default Home;
+//   buttonImage: {
+//     width: 180,
+//     height: 180,
+//     borderRadius: 50,
+//   },
+//   floatingButton: {
+//     position: 'absolute',
+//     bottom: 16,
+//     right: 16,
+//     width: 56,
+//     height: 56,
+//     borderRadius: 28,
+//     backgroundColor: '#0A1E32',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     shadowColor: 'white',
+//     shadowOffset: {
+//       width: 5,
+//       height: 5,
+//     },
+//     shadowOpacity: 50,
+//     shadowRadius: 30,
+//     elevation: 5,
+//   },
+//   buttonNImage: {
+//     width: 90,
+//     height: 90,
+//     borderRadius: 50,
+//     marginLeft: 11,
+//     marginRight: 13,
+//   },
+})
+
+export default Home
