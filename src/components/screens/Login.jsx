@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import { StatusBar } from 'expo-status-bar'
 import { View, Text, TouchableOpacity, StyleSheet, Alert, Image } from 'react-native'
 import { Input } from 'react-native-elements'
 import URLButton from '../URLButton.jsx'
@@ -14,31 +15,41 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
-        <Image style={styles.logo} source={require('../../../recursos/images/logoCAEII2.png')}/>
+        <StatusBar style="dark" />
+
+        <Image style={styles.logo} source={require('../../../recursos/images/logoCAEII.png')}/>
+
         <Input
             style={styles.text}
-            placeholderTextColor='#F5F5F5'
+            placeholderTextColor='#404040'
             placeholder="Email"
+            autoCapitalize='none'
             onChangeText={text => setUsername(text)}
         />
+
         <Input
             style={styles.text}
             placeholder="Contraseña"
-            placeholderTextColor='#F5F5F5'
+            autoCapitalize='none'
+            placeholderTextColor='#404040'
             secureTextEntry={hidePassword}
             onChangeText={text => setPassword(text)}    
             rightIcon={
               <TouchableOpacity activeOpacity = { 0.3 } style={styles.btnVisibility} onPress = {() => setHidePassword(!hidePassword)}>
-                  <Image style={styles.btnImage} tintColor={'#F5F5F5'} source={(hidePassword) ? require('../../../recursos/images/ic_show_password.png') : require('../../../recursos/images/ic_hide_password.png') }/>
+                  <Image style={styles.btnImage} tintColor={'#404040'} source={(hidePassword) ? require('../../../recursos/images/ic_show_password.png') : require('../../../recursos/images/ic_hide_password.png') }/>
               </TouchableOpacity>
               }
         />
-        <URLButton url={'https://inscripciones.aareii.org.ar/password/reset'}>¿Olvidó su contraseña?</URLButton>
+
+        <URLButton url={'https://inscripciones.aareii.org.ar/password/reset'}>¿Olvidaste tu contraseña?</URLButton>
+        
         <TouchableOpacity style={styles.button} onPress={() => handleLogin(email, password, signIn)}>
             <Text style={styles.buttonText}>Iniciar Sesión</Text>
         </TouchableOpacity>
+        
         <Text style={styles.text}>¿No tienes una cuenta?</Text>
-        <URLButton url={'https://inscripciones.aareii.org.ar/register'}>Regístrate</URLButton>
+        
+        <URLButton url={'https://inscripciones.aareii.org.ar/register'}>Registrate</URLButton>
     </View>
   )
 }
@@ -47,13 +58,13 @@ const Login = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#101010", 
+    backgroundColor: "#f7f6f6", 
     alignItems: 'center',
     justifyContent: 'center',
     padding: 30,
   },
   text: {
-    color: '#F5F5F5', 
+    color: '#404040', 
     fontFamily: 'avenir-medium'
   },
   logo: {
@@ -64,7 +75,7 @@ const styles = StyleSheet.create({
     marginTop: 30
   },
   button: {
-    backgroundColor: '#13839c',
+    backgroundColor: '#56869c',
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 20,
@@ -72,7 +83,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   buttonText: {
-    color: '#f5f5f5',
+    color: '#ffffff',
     fontSize: 18,
     fontFamily: 'avenir-black'
   },
