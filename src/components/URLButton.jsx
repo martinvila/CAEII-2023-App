@@ -16,7 +16,7 @@ const URLButton = ({url, children}) => {
 
 const styles = StyleSheet.create({
 links: {
-    color: '#F5F5F5',
+    color: '#404040',
     fontFamily: 'avenir-black'
   }
 })

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native'; 
 
-const Asistente = () => {
+const Info = () => {
     return (
         <View style={styles.container}>
         </View>
@@ -12,9 +12,9 @@ const Asistente = () => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#101010"
+      backgroundColor: "#f7f6f6"
     },
 });
 
 
-export default Asistente; 
+export default Info; 
