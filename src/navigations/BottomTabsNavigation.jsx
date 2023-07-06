@@ -2,11 +2,11 @@ import React from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons'
-import Perfil from "./screens/Profile" 
-import Acreditation from './screens/Acreditation'
-import Home from './screens/Home'
-import Inscripciones from './screens/Inscriptions'
-import Attendance from "./screens/Attendance"
+import Perfil from "../screens/Profile" 
+import Acreditation from '../screens/Acreditation'
+import HomeNavigation from './HomeNavigation'
+import Inscripciones from '../screens/Inscriptions'
+import Attendance from "../screens/Attendance"
 
 const Tab = createBottomTabNavigator()
 
@@ -25,7 +25,7 @@ const HomeButtonTab = ({onPress, children}) => {
 function Tabs() {
   return (
     <Tab.Navigator
-        initialRouteName='Bienvenido'
+        initialRouteName='HomeNavigation'
         backBehavior='history'
 
         screenOptions={({route}) => ({
@@ -39,14 +39,6 @@ function Tabs() {
             },
             headerTitleAlign: 'center',
             headerTintColor: '#F5F5F5', // Cambiar el color del texto del encabezado aquí
-            headerRight: () => (
-                <TouchableOpacity 
-                style={styles.notificationButton}
-                //onPress={(props) => navigation.navigate('Notificaciones')}
-                >
-                    <Ionicons name="notifications-outline" size={28} color="#F5F5F5" />
-                </TouchableOpacity>
-            ),
 
             tabBarShowLabel: false,
             tabBarStyle: { 
@@ -61,7 +53,7 @@ function Tabs() {
                     iconName = focused ? "clipboard" : "clipboard-outline"
                 } else if(route.name === 'Acreditacion'){
                     iconName = focused ? "qr-code" : "qr-code-outline"
-                } else if(route.name === 'Bienvenido'){
+                } else if(route.name === 'HomeNavigation'){
                     iconName = focused ? "home" : "home-outline"
                     iconSize = 45
                 } else if(route.name === 'Inscripciones'){
@@ -76,9 +68,10 @@ function Tabs() {
         <Tab.Screen name="Asistencia" component={ Attendance }/>
         <Tab.Screen name="Acreditacion" component={ Acreditation }/>
         <Tab.Screen
-            name="Bienvenido"
-            component={ Home }
+            name="HomeNavigation"
+            component={ HomeNavigation }
             options={{
+                headerShown: false,
                 tabBarButton: (props) => <HomeButtonTab {...props}/>
             }}
         />
@@ -89,9 +82,6 @@ function Tabs() {
 }
 
 const styles = StyleSheet.create({
-    notificationButton: {
-        marginRight: 15,
-    },
     button: {
         width: 84,
         height: 84,

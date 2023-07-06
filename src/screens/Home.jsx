@@ -1,17 +1,12 @@
 import React from "react"
 import { StyleSheet, View, TouchableOpacity, Text, Image} from "react-native"
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons'
-import HomeButton from '../HomeButton'
-import Cronograma from './Schedule'
-import Pilares from './Pilares'
-import Nosotros from './Us'
-import Asistente from './Assistant'
-
+import HomeButton from '../components/HomeButton'
 
 const Home = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
-			<Image style={styles.logo} source={require('../../../recursos/images/logoCAEII.png')}/>
+			<Image style={styles.logo} source={require('../../recursos/images/logoCAEII.png')}/>
 
 			<View style={styles.buttonRow}>
 				<HomeButton
@@ -39,7 +34,7 @@ const Home = ({ navigation }) => {
 				text=""
 				size={90}
 				colour= "#ffffff"
-				onPress={() => navigation.navigate('Home')}
+				onPress={() => navigation.navigate('Informacion')}
 				/> 
 			
 			<View style={styles.buttonRow}>
@@ -49,7 +44,7 @@ const Home = ({ navigation }) => {
 				text="Nosotros"
 				size={45}
 				colour= "#ffffff"
-				onPress={() => navigation.navigate('Us')} 
+				onPress={() => navigation.navigate('Nosotros')} 
 				/> 
 
 				<HomeButton
@@ -78,7 +73,7 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f7f6f6",
+	backgroundColor: "#f7f6f6",
     alignItems: "center",
   },
   logo: {
