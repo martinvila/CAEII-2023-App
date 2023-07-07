@@ -1,73 +1,99 @@
+
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-
-import { MaterialCommunityIcons, AntDesign , Ionicons, FontAwesome, Feather} from '@expo/vector-icons';
-
-import { MaterialIcons } from '@expo/vector-icons';
+import { View, StyleSheet, ScrollView } from 'react-native';
+import PilaresBox from '../components/PilaresBox';
 
 const Pilares = () => {
   return (
-    <View style={styles.container}>
-            <View style={styles.pilar1}>
-                <MaterialIcons name="computer" size={24} color="black" />
-            </View>
-        
-            <View style={styles.pilar2}>
-                <MaterialCommunityIcons name="lightbulb-on-outline" size={24} color="black" />
-            </View>
+    <ScrollView contentContainerStyle={styles.container}>
+      
+      <PilaresBox
+        const title={`EL COSTO${'\n'} DE LAS IDEAS`}
+        iconLibrary="MaterialCommunityIcons"
+        iconName="lightbulb-on-outline"
+        size= {70}
+        color= "white"
+        colour="#13839C"
+        phrase= "Lo que haces y dejas de hacer tiene un impacto directo en tu vida"
+        text="¡Descubre la complejidad de la realidad y cómo tomar decisiones en tu vida! 
+              Explora el concepto del costo de oportunidad y descubre el precio que pagas 
+              al elegir una opción sobre otra. A través de esta experiencia interactiva, 
+              comprenderás tu estado presente y aprenderás a planificar un futuro exitoso. 
+              ¿Sabías que los ingenieros tienen un proceso de razonamiento único? Descubre 
+              cómo influye en nuestras elecciones y pensamientos. Recuerda que somos seres 
+              sociales y nuestra vida se desenvuelve en organizaciones llenas de emociones, 
+              pensamientos, decisiones y acciones individuales. No estás solo en este viaje, 
+              hay innumerables expertos que te guiarán para que escribas tu propio futuro."
+      />
+    
+      <PilaresBox
+        title= {`REVOLUCIONES${'\n'} Y TECNOLOGÍA`}
+        iconLibrary="MaterialIcons"
+        iconName="computer"
+        color= "white"
+        colour="#485E88"
+        size= {70}
+        phrase= "Lo que haces y dejas de hacer tiene un impacto directo en tu vida"
+        text="¡Descubre la complejidad de la realidad y cómo tomar decisiones en tu vida! 
+              Explora el concepto del costo de oportunidad y descubre el precio que pagas 
+              al elegir una opción sobre otra. A través de esta experiencia interactiva, 
+              comprenderás tu estado presente y aprenderás a planificar un futuro exitoso. 
+              ¿Sabías que los ingenieros tienen un proceso de razonamiento único? Descubre 
+              cómo influye en nuestras elecciones y pensamientos. Recuerda que somos seres 
+              sociales y nuestra vida se desenvuelve en organizaciones llenas de emociones, 
+              pensamientos, decisiones y acciones individuales. No estás solo en este viaje, 
+              hay innumerables expertos que te guiarán para que escribas tu propio futuro."
+      />
 
-            <View style={styles.pilar3}>
-                <FontAwesome name="recycle" size={24} color="black" />
-            </View>
+      <PilaresBox
+        title="IMPACTEMOS POSITIVAMENTE"
+        iconLibrary="FontAwesome"
+        iconName="recycle"
+        color= "white"
+        colour="#B03723"
+        size= {70}
+        phrase= "Lo que haces y dejas de hacer tiene un impacto directo en tu vida"
+        text="¡Descubre la complejidad de la realidad y cómo tomar decisiones en tu vida! 
+              Explora el concepto del costo de oportunidad y descubre el precio que pagas 
+              al elegir una opción sobre otra. A través de esta experiencia interactiva, 
+              comprenderás tu estado presente y aprenderás a planificar un futuro exitoso. 
+              ¿Sabías que los ingenieros tienen un proceso de razonamiento único? Descubre 
+              cómo influye en nuestras elecciones y pensamientos. Recuerda que somos seres 
+              sociales y nuestra vida se desenvuelve en organizaciones llenas de emociones, 
+              pensamientos, decisiones y acciones individuales. No estás solo en este viaje, 
+              hay innumerables expertos que te guiarán para que escribas tu propio futuro."
+      />
 
-            <View style={styles.pilar4}>
-                <MaterialCommunityIcons name="axis-y-rotate-clockwise" size={24} color="black" />
-            </View>
-    </View>
+      <PilaresBox
+        title={`INNOVACIÓN${'\n'} Y FUTURO`}
+        iconLibrary="MaterialCommunityIcons"
+        iconName="chart-timeline-variant-shimmer"
+        size= {70}
+        color= "white"
+        colour="#C95727"
+        phrase= "Lo que haces y dejas de hacer tiene un impacto directo en tu vida"
+        text="¡Descubre la complejidad de la realidad y cómo tomar decisiones en tu vida! 
+              Explora el concepto del costo de oportunidad y descubre el precio que pagas 
+              al elegir una opción sobre otra. A través de esta experiencia interactiva, 
+              comprenderás tu estado presente y aprenderás a planificar un futuro exitoso. 
+              ¿Sabías que los ingenieros tienen un proceso de razonamiento único? Descubre 
+              cómo influye en nuestras elecciones y pensamientos. Recuerda que somos seres 
+              sociales y nuestra vida se desenvuelve en organizaciones llenas de emociones, 
+              pensamientos, decisiones y acciones individuales. No estás solo en este viaje, 
+              hay innumerables expertos que te guiarán para que escribas tu propio futuro."
+      />
+
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-container: {
-    flex: 1,
-    justifyContent: 'space-evenly',
+  container: {
+    //flexGrow: 1,
+    //justifyContent: 'space-evenly',
     alignItems: 'center',
-    backgroundColor: '#101010',
-}, 
-
-  pilar1: {
-    width: '90%',
-    height: 100,
-    backgroundColor: "#13839C",
-    marginVertical: 10,
-    borderRadius: 10,
-  },
-
-  pilar2: {
-    width: '90%',
-    height: 100,
-    backgroundColor: "#485E88",
-    marginVertical: 10,
-    borderRadius: 10,
-  },
-
-  pilar3: {
-    width: '90%',
-    height: 100,
-    backgroundColor: "#B03723",
-    marginVertical: 10,
-    borderRadius: 10,
-  },
-
-  pilar4: {
-    width: '90%',
-    height: 100,
-    backgroundColor: "#C95727",
-    marginVertical: 10,
-    borderRadius: 10,
+    backgroundColor: '#f7f6f6',
   },
 });
 
 export default Pilares;
-
-
