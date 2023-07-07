@@ -68,7 +68,7 @@ const Login = () => {
                 }
             />
 
-            <URLButton url={'https://inscripciones.aareii.org.ar/password/reset'}>¿Olvidaste tu contraseña?</URLButton>
+            <URLButton url={'https://inscripciones.aareii.org.ar/password/reset'} size={16}>¿Olvidaste tu contraseña?</URLButton>
             
             <TouchableOpacity style={styles.button} onPress={() => handleLogin()}>
                 <Text style={styles.buttonText}>Iniciar Sesión</Text>
@@ -76,7 +76,7 @@ const Login = () => {
             
             <Text style={styles.text}>¿No tienes una cuenta?</Text>
             
-            <URLButton url={'https://inscripciones.aareii.org.ar/register'}>Registrate</URLButton>
+            <URLButton url={'https://inscripciones.aareii.org.ar/register'} size={16}>Registrate</URLButton>
         </View>
     )
 }
