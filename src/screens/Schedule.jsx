@@ -1,34 +1,11 @@
-// import React from 'react';
-// import { View } from 'react-native';
-// import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
-
-
-// const Cronograma = () => {
-//     return (
-//       <View style={{ flex: 1 }}>
-//         <Calendar
-        
-//         markedDates={{
-//           '2023-05-05': { marked: true, dotColor: '#FF0000' },
-//           '2023-05-15': { marked: true, dotColor: '#00FF00' },
-//           // Aca marco los dias que quiero 
-//         }}
-//         />
-//           {/* // Configuración del calendario
-//           // Puedes personalizarlo según tus necesidades */}
-//         {/* Otros componentes relacionados con el cronograma */}
-//       </View>
-//     );
-//   };
-
-//   export default Cronograma;
 import React, { useState } from 'react';
 import { SelectList } from 'react-native-dropdown-select-list';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, Image, ScrollView , Text} from 'react-native';
 
 const Cronograma = () => {
   const [selected, setSelected] = useState('');
   const [showInfo, setShowInfo] = useState(false);
+  const [content, setContent] = useState(null);
 
   const data = [
     { key: '1', value: 'Día Cero' },
@@ -37,29 +14,6 @@ const Cronograma = () => {
     { key: '4', value: 'Día Sábado' },
     { key: '5', value: 'Día Domingo' },
   ];
-
-  const actions = {
-    'Día Cero': () => {
-      setShowInfo(true);
-      // Acción para el botón 'Día Cero'
-    },
-    'Día Jueves': () => {
-      setShowInfo(true);
-      // Acción para el botón 'Día Jueves'
-    },
-    'Día Viernes': () => {
-      setShowInfo(true);
-      // Acción para el botón 'Día Viernes'
-    },
-    'Día Sábado': () => {
-      setShowInfo(true);
-      // Acción para el botón 'Día Sábado'
-    },
-    'Día Domingo': () => {
-      setShowInfo(true);
-      // Acción para el botón 'Día Domingo'
-    },
-  };
 
   const handleSelect = (value) => {
     setSelected(value);
@@ -71,80 +25,95 @@ const Cronograma = () => {
     }
   };
 
-  return (
-     <View style={styles.container}>
-          <View style={{paddingHorizontal: 20, paddingVertical:50 }}>
-          <SelectList
-            setSelected={setSelected}
-            data={data}
-            save="value"
-            optionStyle={optionStyle}
-            menuStyle={menuStyle}
-            boxStyles={{backgroundColor:"white" , borderColor:"#485E88", paddingHorizontal: 80}}
-            dropdownStyles={{backgroundColor:"white", borderColor:"white", paddingHorizontal:3}}
-            placeholder='Seleccione día' 
-            
-          />
-          </View>
-          {showInfo && selected === 'Día Cero' && (
-            <View style={styles.infoContainer}>
-              <Text style={styles.infoText}>Este es el día cero</Text>
-            </View>
-          )}
+  const actions = {
+    'Día Cero': () => {
+      setShowInfo(true);
+      setContent(<Text style={styles.customText}>¡Dia Cero!</Text>);
+      
+    },
+    'Día Jueves': () => {
+      setShowInfo(true);
+      setContent(<Text style={styles.customText}>¡Dia cero!</Text>);
+    },
+    'Día Viernes': () => {
+      setShowInfo(true);
+      //setContent(<Image style={styles.image} source={require('../../../recursos/images/viernes.png')} />);
+      setContent(<Text style={styles.customText}>¡Dia Viernes!</Text>);
+    },
+    'Día Sábado': () => {
+      setShowInfo(true);
+      //setContent(<Image style={styles.image} source={require('../../../recursos/images/Sabado.png')} />);
+    },
+    'Día Domingo': () => {
+      setShowInfo(true);
+      //setContent(<Image style={styles.image} source={require('../../../recursos/images/Domingo.png')} />);
+    },
+  };
 
-          {showInfo && selected === 'Día Jueves' && (
-            <View style={styles.infoContainer}>
-              <Text style={styles.infoText}>Este es el día jueves</Text>
-            </View>
-          )}
-          
+  return (
+    <View style={styles.container}>
+      <View style={{ paddingHorizontal: 20, paddingVertical: 50 }}>
+        <SelectList
+          setSelected={handleSelect}
+          data={data}
+          save="value"
+          boxStyles={{
+            backgroundColor: "#13839C",
+            borderColor: "#485E88",
+            paddingHorizontal: 80
+          }}
+          dropdownStyles={{
+            backgroundColor: "#13839C",
+            borderColor: "white",
+            paddingHorizontal: 3,
+            color: "white",
+          }}
+          dropdownTextStyles={{ color: "white" }}
+          placeholder='Seleccione día'
+        />
+      </View>
+      {showInfo && (
+        <ScrollView style={styles.infoContainer}>
+          {content}
+        </ScrollView>
+      )}
     </View>
-  )
+  );
 };
 
-export default Cronograma;
-
-
-
-const optionStyle = {
-    // Estilos para las opciones
-    backgroundColor: 'black',
-    padding: 10,
-  };
-
-
-  const menuStyle = {
-    // Estilos para el menú
-    backgroundColor: 'lightgray',
-    borderRadius: 5,
-    padding: 15,
-    margin: 10,
-  };
-
-
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-      backgroundColor: '#101010',
-      paddingTop: -10,
-  },
-  additionalInfo: {
-    marginTop: 20,
-    paddingHorizontal: 10,
-    paddingVertical: 10,
+  container: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     backgroundColor: 'white',
+    paddingTop: -10,
   },
   infoContainer: {
     paddingHorizontal: 10,
     paddingVertical: 10,
     backgroundColor: 'white',
   },
-
-  infoText: {
+  square: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'red',
+  },
+  circle: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: 'blue',
+  },
+  customText: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: 'white',
+    color: 'black',
+  },
+ image: {
+    width: '100%',
+    height: 600,  // Ajusta la altura de la imagen según tus necesidades
   },
 });
+
+export default Cronograma;
