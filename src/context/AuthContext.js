@@ -7,17 +7,20 @@ export const authReducer = (state, action) => {
         case 'RESTORE_TOKEN':
             return {
                 userToken: action.token,
+                permissions: action.permissions,
                 isLoading: false,
             }
         case 'LOG_IN':
             return {
                 isLogout: false,
                 userToken: action.token,
+                permissions: action.permissions,
             }
         case 'LOG_OUT':
             return {
                 isLogout: true,
                 userToken: null,
+                permissions: null,
             }
         default:
             return state
@@ -29,6 +32,7 @@ export const AuthContextProvider = ({ children }) => {
         isLoading: true,
         isLogout: false,
         userToken: null,
+        permissions: null
 	})
 
     return (

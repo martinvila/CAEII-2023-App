@@ -5,8 +5,9 @@
         "description": "Estudiante",
         "location": "Mar del plata",
         "email": "vilamartin21@gmail.com",
-        "password": "12345678",
-        "token": "i145g1li345hb134i5yv"
+        "password": "1",
+        "token": "i145g1li345hb134i5yv",
+        "permissions": "admin"
     },
     {
         "id": "2",
@@ -15,7 +16,8 @@
         "location": "Mar del plata",
         "email": "juanconcep0770@gmail.com",
         "password": "87654321",
-        "token": "h5og89gqp9g8q3n49p3r"
+        "token": "h5og89gqp9g8q3n49p3r",
+        "permissions": "admin"
     },
     {
         "id": "3",
@@ -24,6 +26,17 @@
         "location": "Mar del plata",
         "email": "fgtenaglia96@gmail.com",
         "password": "123123123",
-        "token": "j5og89gqp9g8q3n49p3r"
+        "token": "j5og89gqp9g8q3n49p3r",
+        "permissions": "admin"
+    },
+    {
+        "id": "4",
+        "name": "Fulano",
+        "description": "Estudiante",
+        "location": "Mar del plata",
+        "email": "fulano@gmail.com",
+        "password": "1",
+        "token": "gh249fh3r9f98qnr9je3r09",
+        "permissions": "user"
     }
 ]

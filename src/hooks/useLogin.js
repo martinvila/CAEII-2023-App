@@ -15,7 +15,7 @@ export const useLogin = () => {
         });
 
         if (foundUser) {
-            dispatch({ type: 'LOG_IN', token: foundUser.token })
+            dispatch({ type: 'LOG_IN', token: foundUser.token, permissions: foundUser.permissions })
         }
         else{
             setError('Datos incorrectos')
