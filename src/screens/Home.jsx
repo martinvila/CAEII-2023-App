@@ -1,7 +1,6 @@
 import React from "react"
 import { StyleSheet, View, TouchableOpacity, Text, Image} from "react-native"
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons'
-import HomeButton from '../components/HomeButton'
+import { HomeButton, NightButton } from '../components/HomeButton'
 
 const Home = ({ navigation }) => {
 	return (
@@ -50,22 +49,23 @@ const Home = ({ navigation }) => {
 				<HomeButton
 				iconLibrary="Ionicons"
 				iconName="map-outline"
-				text="Asistente"
+				text={`Manual de${'\n'}  asistente`}
 				size={45}
 				colour= "#ffffff"
 				onPress={() => navigation.navigate('Asistente')} 
 				/> 
 			</View>
+			
+			<View style={styles.buttonNight}>
+				<NightButton
+				iconLibrary="MaterialIcons"
+				iconName="local-bar"
+				size={35}
+				colour= "#ffde77"
+				onPress={() => navigation.navigate('Noche')}
+				/>				 
+			</View>
 
-				{/* <Animated.View style={floatingButtonStyle} {...panResponder.panHandlers}>
-					<TouchableOpacity onPress={() =>  handleButtonPress('Noche')}>
-						<Image
-						source={require('../../../recursos/images/noche.png')}
-						style={styles.buttonNImage}
-						resizeMode="contain"
-						/>
-					</TouchableOpacity>
-				</Animated.View> */}
 		</View>
 	)
 }
@@ -73,51 +73,25 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-	backgroundColor: "#f7f6f6",
-    alignItems: "center",
+	backgroundColor: '#f7f6f6',
+    alignItems: 'center',
   },
   logo: {
     resizeMode: 'contain',
     height: '25%',
     width: '75%',
-	marginTop: 10
   },
   buttonRow: {
-    flexDirection: "row",
+    flexDirection: 'row',
     padding: 15,
   },
-
-//   buttonImage: {
-//     width: 180,
-//     height: 180,
-//     borderRadius: 50,
-//   },
-//   floatingButton: {
-//     position: 'absolute',
-//     bottom: 16,
-//     right: 16,
-//     width: 56,
-//     height: 56,
-//     borderRadius: 28,
-//     backgroundColor: '#0A1E32',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     shadowColor: 'white',
-//     shadowOffset: {
-//       width: 5,
-//       height: 5,
-//     },
-//     shadowOpacity: 50,
-//     shadowRadius: 30,
-//     elevation: 5,
-//   },
-//   buttonNImage: {
-//     width: 90,
-//     height: 90,
-//     borderRadius: 50,
-//     marginLeft: 11,
-//     marginRight: 13,
-//   },
+  buttonNight: {
+	width: '90%',
+	height: '18%',
+	justifyContent: 'flex-end',
+	alignItems: 'flex-end',
+    padding: 10,
+  },
 })
 
 export default Home

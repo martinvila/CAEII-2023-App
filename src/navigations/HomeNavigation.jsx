@@ -9,6 +9,7 @@ import Info from '../screens/Info'
 import Nosotros from '../screens/Us'
 import Asistente from '../screens/Assistant'
 import Slide from '../screens/Notifications'
+import NocheScreen from '../screens/Night'
 
 const HomeStack = createNativeStackNavigator()
 
@@ -62,6 +63,15 @@ const HomeNavigation = () => {
 			<HomeStack.Screen 
 				name="Asistente"
 				component={Asistente}
+			/>
+			<HomeStack.Screen 
+				name="Noche"
+				component={NocheScreen}
+				options={{
+					headerStyle: {
+						backgroundColor: "#000000"
+					},
+				}}
 			/>
 			<HomeStack.Screen 
 				name="Notificaciones"
